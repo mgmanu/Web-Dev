@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Assignment</title>
+
+    <style>
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- TASK 3 : THREE DIV BLOCKS -->
+
+    <div class="flex-container">
+
+
+        <div class="column"
+             style="
+             padding: 30px;
+             background-color: lightblue;
+             text-align: center;
+             ">
+
+            <h2>London</h2>
+
+            <p>London is the capital city of England.</p>
+
+            <p>London has over 9 million inhabitants.</p>
+
+        </div>
+
+
+        <div class="column"
+             style="
+             padding: 30px;
+             background-color: lightgreen;
+             text-align: center;
+             ">
+
+            <h2>Oslo</h2>
+
+            <p>Oslo is the capital city of Norway.</p>
+
+            <p>Oslo has over 700,000 inhabitants.</p>
+
+        </div>
+
+
+        <div class="column"
+             style="
+             padding: 30px;
+             background-color: lightblue;
+             text-align: center;
+             ">
+
+            <h2>Rome</h2>
+
+            <p>Rome is the capital city of Italy.</p>
+
+            <p>Rome has over 4 million inhabitants.</p>
+
+        </div>
+
+
+    </div>
+
+
+    <hr>
+    <hr>
+
+
+    <!-- ASSIGNMENT -->
+
+    <h2 style="background-color: lightblue; color: blue;">
+
+        Assignment
+
+    </h2>
+
+
+    <!-- TASK 2 : TABLE -->
+
+    <h3>TABLE</h3>
+
+
+    <table border="5"
+           cellpadding="5"
+           cellspacing="0"
+           style="border-color: black;">
+
+
+        <tr style="background-color: #5b8fd9;">
+
+            <th colspan="2">
+                Name
+            </th>
+
+            <th rowspan="2">
+                Age
+            </th>
+
+        </tr>
+
+
+        <tr style="background-color: #5b8fd9;">
+
+            <th>First Name</th>
+
+            <th>Last Name</th>
+
+        </tr>
+
+
+        <tr style="background-color: #d98be5;">
+
+            <td align="center">
+                Rohan
+            </td>
+
+            <td align="center">
+                Joshi
+            </td>
+
+            <td align="center">
+                39
+            </td>
+
+        </tr>
+
+
+        <tr style="background-color: #d98be5;">
+
+            <td align="center">
+                Samay
+            </td>
+
+            <td align="center">
+                Raina
+            </td>
+
+            <td align="center">
+                32
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+    <br>
+    <br>
+
+
+    <!-- TASK 1 : APPLICATION FORM -->
+
+    <h2 style="background-color: lightblue; color: blue;">
+
+        Create Student Application Using Form Tag
+
+    </h2>
+
+
+    <form>
+
+
+        <!-- First Name -->
+
+        <label for="firstname">
+            First name:
+        </label>
+
+        <input type="text"
+               id="firstname"
+               name="firstname">
+
+        <br>
+        <br>
+
+
+        <!-- Second Name -->
+
+        <label for="secondname">
+            Second name:
+        </label>
+
+        <input type="text"
+               id="secondname"
+               name="secondname">
+
+        <br>
+        <br>
+
+
+        <!-- Age -->
+
+        <label for="age">
+            Age:
+        </label>
+
+        <input type="number"
+               id="age"
+               name="age"
+               min="1"
+               max="100">
+
+        <br>
+        <br>
+
+
+        <!-- Gender -->
+
+        <label>
+            Gender:
+        </label>
+
+        <input type="radio"
+               id="male"
+               name="gender"
+               value="Male">
+
+        <label for="male">
+            Male
+        </label>
+
+
+        <input type="radio"
+               id="female"
+               name="gender"
+               value="Female">
+
+        <label for="female">
+            Female
+        </label>
+
+        <br>
+        <br>
+
+
+        <!-- Mobile -->
+
+        <label for="mobile">
+            Mobile:
+        </label>
+
+        <input type="number"
+               id="mobile"
+               name="mobile"
+               min="1111111111"
+               max="9999999999">
+
+        <br>
+        <br>
+
+
+        <!-- Email -->
+
+        <label for="email">
+            Email:
+        </label>
+
+        <input type="email"
+               id="email"
+               name="email">
+
+        <br>
+        <br>
+
+
+        <!-- Date of Birth -->
+
+        <label for="dob">
+            Date of Birth:
+        </label>
+
+        <input type="date"
+               id="dob"
+               name="dob">
+
+        <br>
+        <br>
+
+
+        <!-- Cars Dropdown -->
+
+        <label for="cars">
+            Select Car:
+        </label>
+
+        <select id="cars"
+                name="cars">
+
+            <option>Ferrari</option>
+
+            <option>Porsche</option>
+
+            <option>Cadillac</option>
+
+            <option>McLaren</option>
+
+            <option>Audi</option>
+
+            <option>Mercedes</option>
+
+            <option>BMW</option>
+
+        </select>
+
+        <br>
+        <br>
+
+
+        <!-- Location -->
+
+        <label for="location">
+            Location:
+        </label>
+
+        <select id="location"
+                name="location">
+
+            <option>Bangalore</option>
+
+            <option>Mysore</option>
+
+            <option>Mangalore</option>
+
+            <option>Hubli</option>
+
+            <option>Belgaum</option>
+
+        </select>
+
+        <br>
+        <br>
+
+
+        <!-- Hobbies -->
+
+        <label>
+            Hobbies:
+        </label>
+
+        <input type="checkbox"
+               id="coding"
+               name="hobby"
+               value="Coding">
+
+        <label for="coding">
+            Coding
+        </label>
+
+
+        <input type="checkbox"
+               id="sports"
+               name="hobby"
+               value="Sports">
+
+        <label for="sports">
+            Sports
+        </label>
+
+
+        <input type="checkbox"
+               id="reading"
+               name="hobby"
+               value="Reading">
+
+        <label for="reading">
+            Reading
+        </label>
+
+        <br>
+        <br>
+
+
+        <!-- Address -->
+
+        <label for="address">
+            Address:
+        </label>
+
+        <br>
+
+        <textarea id="address"
+                  name="address"
+                  rows="4"
+                  cols="40"></textarea>
+
+        <br>
+        <br>
+
+
+        <!-- Password -->
+
+        <label for="password">
+            Password:
+        </label>
+
+        <input type="password"
+               id="password"
+               name="password">
+
+        <br>
+        <br>
+
+
+        <!-- Submit -->
+
+        <input type="submit"
+               value="Submit">
+
+
+        <!-- Reset -->
+
+        <input type="reset"
+               value="Reset">
+
+
+    </form>
+
+
+</body>
+
+</html>
