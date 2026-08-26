@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🏎️ Racing Car Selection</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+
+        /* Whole Page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ff512f,
+                #dd2476,
+                #6a11cb,
+                #2575fc
+            );
+
+            min-height: 100vh;
+        }
+
+        /* Main Container */
+        .container {
+            width: 70%;
+            max-width: 800px;
+            margin: 40px auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Heading */
+        h1 {
+            text-align: center;
+
+            color: #e63946;
+
+            font-size: 36px;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Section Headings */
+        h2 {
+            background: linear-gradient(
+                90deg,
+                #ff512f,
+                #dd2476
+            );
+
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            font-size: 22px;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+
+            margin-top: 18px;
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+        /* Input and Dropdown */
+        input,
+        select {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 2px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+
+            background-color: #f8f9ff;
+        }
+
+        /* Input Focus */
+        input:focus,
+        select:focus {
+            outline: none;
+
+            border-color: #6a11cb;
+
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: linear-gradient(
+                90deg,
+                #ff512f,
+                #dd2476,
+                #6a11cb
+            );
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        /* Button Hover */
+        button:hover {
+            background: linear-gradient(
+                90deg,
+                #6a11cb,
+                #dd2476,
+                #ff512f
+            );
+
+            transform: scale(1.02);
+        }
+
+        /* External Website Box */
+        .website {
+            margin-top: 30px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background-color: #e3f2fd;
+
+            border-radius: 15px;
+        }
+
+        .website a {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background-color: #1565c0;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+        .website a:hover {
+            background-color: #0d47a1;
+        }
+
+        /* Racing Emoji */
+        .car {
+            text-align: center;
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="car">
+            🏎️
+        </div>
+
+        <h1>Racing Car Selection</h1>
+
+        <p class="subtitle">
+            Choose your dream racing machine! 🏁
+        </p>
+
+
+        <!-- Mobile Number Section -->
+
+        <h2>📱 Mobile Number Verification</h2>
+
+        <form>
+
+            <label for="mobile">
+                Mobile Number:
+            </label>
+
+            <input
+                type="number"
+                id="mobile"
+                name="mobile"
+                min="1111111111"
+                max="9999999999"
+                placeholder="Enter 10-digit mobile number"
+                required
+            >
+
+
+            <!-- Racing Car Section -->
+
+            <h2>🏎️ Select Your Racing Car</h2>
+
+
+            <!-- Car Model -->
+
+            <label for="car">
+                🚗 Select Car Model:
+            </label>
+
+            <select id="car" name="car" required>
+
+                <option value="">
+                    -- Select Car --
+                </option>
+
+                <option value="Ferrari">
+                    🔴 Ferrari
+                </option>
+
+                <option value="Porsche">
+                    🔵 Porsche
+                </option>
+
+                <option value="Cadillac">
+                    ⚫ Cadillac
+                </option>
+
+                <option value="McLaren">
+                    🟠 McLaren
+                </option>
+
+                <option value="Audi">
+                    ⚪ Audi
+                </option>
+
+                <option value="Mercedes">
+                    ⚫ Mercedes
+                </option>
+
+                <option value="BMW">
+                    🔵 BMW
+                </option>
+
+            </select>
+
+
+            <!-- Engine -->
+
+            <label for="engine">
+                ⚡ Select Engine Power:
+            </label>
+
+            <select id="engine" name="engine" required>
+
+                <option value="">
+                    -- Select Engine Power --
+                </option>
+
+                <option value="500-700 HP">
+                    500–700 HP (V8 & V6 Engines)
+                </option>
+
+                <option value="700-900 HP">
+                    700–900 HP (Hybrid V6/V8 Systems)
+                </option>
+
+                <option value="1000-1500 HP">
+                    1,000–1,500+ HP (Hypercar Territory)
+                </option>
+
+                <option value="1900-2100 HP">
+                    1,900–2,100+ HP (Pure Electric)
+                </option>
+
+            </select>
+
+
+            <!-- Car Type -->
+
+            <label for="type">
+                🏁 Select Car Type:
+            </label>
+
+            <select id="type" name="type" required>
+
+                <option value="">
+                    -- Select Car Type --
+                </option>
+
+                <option value="Sports Car">
+                    🏎️ Sports Car
+                </option>
+
+                <option value="Supercar">
+                    🚘 Supercar
+                </option>
+
+                <option value="Hypercar">
+                    🔥 Hypercar
+                </option>
+
+                <option value="Electric Racing Car">
+                    ⚡ Electric Racing Car
+                </option>
+
+            </select>
+
+
+            <!-- Color -->
+
+            <label for="color">
+                🎨 Select Car Color:
+            </label>
+
+            <select id="color" name="color" required>
+
+                <option value="">
+                    -- Select Color --
+                </option>
+
+                <option value="Red">
+                    🔴 Red
+                </option>
+
+                <option value="Black">
+                    ⚫ Black
+                </option>
+
+                <option value="White">
+                    ⚪ White
+                </option>
+
+                <option value="Blue">
+                    🔵 Blue
+                </option>
+
+                <option value="Yellow">
+                    🟡 Yellow
+                </option>
+
+                <option value="Silver">
+                    ⚙️ Silver
+                </option>
+
+            </select>
+
+
+            <!-- Submit -->
+
+            <button type="submit">
+                🏁 SUBMIT YOUR SELECTION 🏁
+            </button>
+
+        </form>
+
+
+        <!-- External Website -->
+
+        <div class="website">
+
+            <h2>🌐 Formula 1</h2>
+
+            <p>
+                Visit the official Formula 1 website
+            </p>
+
+            <a
+                href="https://www.formula1.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit Formula 1 Website ↗
+            </a>
+
+        </div>
+
+
+        <footer>
+            🏎️ Racing Car Selection Form | HTML & CSS 🏁
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
