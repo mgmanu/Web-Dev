@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="StadiumX client-side sports ticket booking website"
+    >
+
+    <title>StadiumX | Ticket Booking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            StadiumX
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#booking">Book Tickets</a>
+            <a href="#bookings">My Bookings</a>
+            <a href="#stands">Stands</a>
+        </nav>
+
+        <button
+            type="button"
+            class="login-btn">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <p class="small-heading">
+                    LIVE SPORTS EXPERIENCE
+                </p>
+
+                <h1>
+                    Experience the
+                    <span>Game Live.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Select your match, choose your stand,
+                    confirm your tickets and manage your bookings.
+                </p>
+
+                <a
+                    href="#schedule"
+                    class="hero-btn">
+                    View Schedule
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="schedule-section"
+            id="schedule">
+
+            <div class="section-heading">
+
+                <p>
+                    UPCOMING MATCHES
+                </p>
+
+                <h2>
+                    Match Schedule
+                </h2>
+
+                <span>
+                    Choose a match to start your booking.
+                </span>
+
+            </div>
+
+
+            <div class="schedule-table-container">
+
+                <table class="schedule-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Match
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Venue
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                India vs Australia
+                            </td>
+
+                            <td>
+                                25 Oct 2026
+                            </td>
+
+                            <td>
+                                7:30 PM
+                            </td>
+
+                            <td>
+                                National Stadium
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="schedule-btn"
+                                    type="button"
+                                    data-match="India vs Australia">
+
+                                    Book Now
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                India vs England
+                            </td>
+
+                            <td>
+                                28 Oct 2026
+                            </td>
+
+                            <td>
+                                7:30 PM
+                            </td>
+
+                            <td>
+                                National Stadium
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="schedule-btn"
+                                    type="button"
+                                    data-match="India vs England">
+
+                                    Book Now
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                India vs South Africa
+                            </td>
+
+                            <td>
+                                01 Nov 2026
+                            </td>
+
+                            <td>
+                                7:30 PM
+                            </td>
+
+                            <td>
+                                National Stadium
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="schedule-btn"
+                                    type="button"
+                                    data-match="India vs South Africa">
+
+                                    Book Now
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="booking-section"
+            id="booking">
+
+            <div class="section-heading">
+
+                <p>
+                    BOOK YOUR SEAT
+                </p>
+
+                <h2>
+                    Complete Your Booking
+                </h2>
+
+                <span>
+                    Enter your details and confirm your tickets.
+                </span>
+
+            </div>
+
+
+            <form
+                class="booking-container"
+                id="bookingForm"
+                novalidate>
+
+
+                <div class="booking-form">
+
+                    <h3>
+                        Customer Details
+                    </h3>
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name">
+
+                        <small
+                            class="error-message"
+                            id="nameError">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="email"
+                            placeholder="Enter your email address">
+
+                        <small
+                            class="error-message"
+                            id="emailError">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="phone"
+                            maxlength="10"
+                            placeholder="Enter 10-digit phone number">
+
+                        <small
+                            class="error-message"
+                            id="phoneError">
+                        </small>
+
+                    </div>
+
+
+                    <h3 class="ticket-heading">
+                        Ticket Details
+                    </h3>
+
+
+                    <div class="form-group">
+
+                        <label for="match">
+                            Select Match
+                        </label>
+
+                        <select id="match">
+
+                            <option value="">
+                                Select a match
+                            </option>
+
+                            <option value="India vs Australia">
+                                India vs Australia
+                            </option>
+
+                            <option value="India vs England">
+                                India vs England
+                            </option>
+
+                            <option value="India vs South Africa">
+                                India vs South Africa
+                            </option>
+
+                        </select>
+
+                        <small
+                            class="error-message"
+                            id="matchError">
+                        </small>
+
+                    </div>
+
+
+                    <div class="match-info">
+
+                        <div>
+
+                            <span>
+                                Date
+                            </span>
+
+                            <strong id="matchDate">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Time
+                            </span>
+
+                            <strong id="matchTime">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Venue
+                            </span>
+
+                            <strong id="matchVenue">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="stand">
+                            Select Stand
+                        </label>
+
+                        <select id="stand">
+
+                            <option value="">
+                                Select a stand
+                            </option>
+
+                            <option value="General">
+                                General — ₹500
+                            </option>
+
+                            <option value="Premium">
+                                Premium — ₹1,000
+                            </option>
+
+                            <option value="VIP">
+                                VIP — ₹2,000
+                            </option>
+
+                            <option value="Corporate">
+                                Corporate — ₹3,500
+                            </option>
+
+                        </select>
+
+                        <small
+                            class="error-message"
+                            id="standError">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Number of Tickets
+                        </label>
+
+                        <div class="quantity-box">
+
+                            <button
+                                type="button"
+                                id="minusBtn">
+                                −
+                            </button>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                max="10"
+                                value="1">
+
+                            <button
+                                type="button"
+                                id="plusBtn">
+                                +
+                            </button>
+
+                        </div>
+
+                        <small>
+                            Maximum 10 tickets per booking
+                        </small>
+
+                        <small
+                            class="error-message"
+                            id="quantityError">
+                        </small>
+
+                    </div>
+
+
+                    <div class="stand-information">
+
+                        <div class="info-icon">
+                            S
+                        </div>
+
+                        <div>
+
+                            <h4 id="standTitle">
+                                Select a Stand
+                            </h4>
+
+                            <p id="standDescription">
+                                Select a stand to view its information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-header">
+
+                        <span>
+                            YOUR BOOKING
+                        </span>
+
+                        <span class="live-status">
+                            LIVE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Booking Summary
+                    </h3>
+
+
+                    <div class="summary-match">
+
+                        <div class="team-icon">
+                            SX
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Selected Match
+                            </span>
+
+                            <strong id="summaryMatch">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <div>
+
+                            <span>
+                                Stand
+                            </span>
+
+                            <strong id="summaryStand">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tickets
+                            </span>
+
+                            <strong id="summaryQuantity">
+                                1
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Price / Ticket
+                            </span>
+
+                            <strong>
+                                ₹<span id="ticketPrice">0</span>
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="discount-row">
+
+                        <span>
+                            Booking Discount
+                        </span>
+
+                        <strong>
+                            ₹<span id="discount">0</span>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="total-section">
+
+                        <span>
+                            TOTAL AMOUNT
+                        </span>
+
+                        <strong>
+                            ₹<span id="totalAmount">0</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="book-btn">
+
+                        Confirm Booking
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="secure-text">
+                        Secure booking and instant confirmation
+                    </p>
+
+
+                    <div
+                        class="success-message"
+                        id="successMessage">
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <section
+            class="bookings-section"
+            id="bookings">
+
+            <div class="section-heading">
+
+                <p>
+                    BOOKING HISTORY
+                </p>
+
+                <h2>
+                    My Ticket Bookings
+                </h2>
+
+                <span>
+                    Manage your confirmed bookings.
+                </span>
+
+            </div>
+
+
+            <div class="booking-filters">
+
+                <div>
+
+                    <label for="matchFilter">
+                        Filter by Match
+                    </label>
+
+                    <select id="matchFilter">
+
+                        <option value="All">
+                            All Matches
+                        </option>
+
+                        <option value="India vs Australia">
+                            India vs Australia
+                        </option>
+
+                        <option value="India vs England">
+                            India vs England
+                        </option>
+
+                        <option value="India vs South Africa">
+                            India vs South Africa
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="standFilter">
+                        Filter by Stand
+                    </label>
+
+                    <select id="standFilter">
+
+                        <option value="All">
+                            All Stands
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                        <option value="Premium">
+                            Premium
+                        </option>
+
+                        <option value="VIP">
+                            VIP
+                        </option>
+
+                        <option value="Corporate">
+                            Corporate
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="booking-table-container">
+
+                <table class="booking-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Booking ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Match
+                            </th>
+
+                            <th>
+                                Stand
+                            </th>
+
+                            <th>
+                                Tickets
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="bookingTableBody">
+
+                    </tbody>
+
+                </table>
+
+
+                <p
+                    class="empty-bookings"
+                    id="emptyBookings">
+                    No bookings found.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="stands-section"
+            id="stands">
+
+            <div class="section-heading">
+
+                <p>
+                    CHOOSE YOUR EXPERIENCE
+                </p>
+
+                <h2>
+                    Find Your Perfect Stand
+                </h2>
+
+            </div>
+
+
+            <div class="stand-cards">
+
+                <div class="stand-card">
+
+                    <div class="card-icon">
+                        G
+                    </div>
+
+                    <h3>
+                        General
+                    </h3>
+
+                    <p>
+                        Comfortable standard seating
+                        for an exciting match experience.
+                    </p>
+
+                    <strong>
+                        ₹500
+                    </strong>
+
+                </div>
+
+
+                <div class="stand-card popular">
+
+                    <div class="popular-label">
+                        POPULAR
+                    </div>
+
+                    <div class="card-icon">
+                        P
+                    </div>
+
+                    <h3>
+                        Premium
+                    </h3>
+
+                    <p>
+                        Better seating position with
+                        an enhanced view of the action.
+                    </p>
+
+                    <strong>
+                        ₹1,000
+                    </strong>
+
+                </div>
+
+
+                <div class="stand-card">
+
+                    <div class="card-icon">
+                        V
+                    </div>
+
+                    <h3>
+                        VIP
+                    </h3>
+
+                    <p>
+                        Premium seating with exclusive
+                        facilities and services.
+                    </p>
+
+                    <strong>
+                        ₹2,000
+                    </strong>
+
+                </div>
+
+
+                <div class="stand-card">
+
+                    <div class="card-icon">
+                        C
+                    </div>
+
+                    <h3>
+                        Corporate
+                    </h3>
+
+                    <p>
+                        Luxury experience designed
+                        for corporate guests.
+                    </p>
+
+                    <strong>
+                        ₹3,500
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">
+            StadiumX
+        </div>
+
+        <p>
+            © 2026 StadiumX. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
