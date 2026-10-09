@@ -1,176 +1,592 @@
-    
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Signup - Sports Arena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-
-        header {
-            background-color: #222;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.72),
+                rgba(0, 0, 0, 0.72)
+            ),
+            url("https://i.ibb.co/8nV2VsZg/IPL-logo.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 20px;
-            text-align: center;
         }
 
-        .signup-box {
-            width: 400px;
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .img {
+            margin: 0 auto 25px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #ff3b3b;
+            border-radius: 15px;
+            max-width: 1000px;
+            font-size: 38px;
+        }
+
+        .header img {
+            width: 450px;
             max-width: 90%;
-            margin: 50px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
-
-        .signup-box h2 {
-            text-align: center;
-        }
-
-        label {
+            border-radius: 15px;
+            margin: 20px auto;
             display: block;
-            margin-top: 15px;
-            margin-bottom: 5px;
         }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
+        .user-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 25px;
         }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            background-color: #222;
+        .user-links h2 {
+            margin: 0;
+        }
+
+        .lin {
+            color: white;
+            text-decoration: none;
+        }
+
+        .lin:hover {
+            color: #ffd700;
+        }
+
+        .box {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 20px;
+            margin: 0;
+            list-style: none;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #ff3b3b;
+            border-radius: 15px;
+        }
+
+        .links li a {
+            display: block;
+            padding: 14px 20px;
+            background: #ff3b3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .links li a:hover {
+            background: #ffd700;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        .table {
+            width: 95%;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            border: 2px solid #111;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table th {
+            background: #111;
+            color: white;
+            padding: 15px;
+        }
+
+        .table td {
+            padding: 14px;
+            text-align: center;
+            border: 1px solid #bbb;
+        }
+
+        .table tr:hover {
+            background: #f0f0f0;
+        }
+
+        #submit {
+            padding: 8px 16px;
+            background: #0066ff;
             color: white;
             border: none;
+            border-radius: 6px;
             cursor: pointer;
+            font-weight: bold;
         }
 
-        button:hover {
-            background-color: green;
+        #submit:hover {
+            background: #0047b3;
         }
 
-        .back {
+        .section-title {
             text-align: center;
-            margin-top: 20px;
+            margin: 45px 0 20px;
+            font-size: 26px;
         }
 
-        .back a {
-            text-decoration: none;
-            color: blue;
+        #sep,
+        #box,
+        #book,
+        #status,
+        #cancel {
+            width: 90%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 2px solid #ff3b3b;
+            border-radius: 15px;
         }
 
+        #sep,
+        #box {
+            background: rgba(75, 0, 130, 0.9);
+        }
+
+        .col {
+            width: 90%;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 25px;
+            background: rgba(75, 0, 130, 0.9);
+            border-radius: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #ffd700;
+        }
+
+        .button,
+        .but {
+            padding: 10px 20px;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        .button:hover,
+        .but:hover {
+            background: #0047b3;
+        }
+
+        .email {
+            width: 100%;
+        }
+
+        .separator {
+            width: 90%;
+            max-width: 1200px;
+            margin: 45px auto;
+            border: 0;
+            border-top: 2px solid #ff3b3b;
+        }
+
+        .foot {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto 25px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            border: 2px solid #ff3b3b;
+            border-radius: 15px;
+        }
+
+        .foot p {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .img {
+                font-size: 28px;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .links li {
+                width: 100%;
+            }
+
+            .links li a {
+                text-align: center;
+            }
+
+            .table {
+                font-size: 13px;
+            }
+
+            .table th,
+            .table td {
+                padding: 8px;
+            }
+
+            .header img {
+                width: 90%;
+            }
+        }
     </style>
-
 </head>
 
 <body>
 
-    <header>
-        <h1>Sports Arena</h1>
+    <header class="header">
+
+        <h1 class="img">IPL Ticket Booking App</h1>
+
+        <img
+            src="https://i.ibb.co/Q1RWy12/Screenshot-2026-09-02-185849.png"
+            alt="IPL Ticket Booking"
+        >
+
+        <div class="user-links">
+            <a class="lin" href="#sep">
+                <h2>Login</h2>
+            </a>
+
+            <p>or</p>
+
+            <a class="lin" href="#box">
+                <h2>Signup</h2>
+            </a>
+        </div>
+
     </header>
 
+    <nav class="box">
 
-    <div class="signup-box">
+        <ul class="links">
+            <li>
+                <a href="#book">Book Your Ticket</a>
+            </li>
 
-        <h2>Signup</h2>
+            <li>
+                <a href="#status">Check Ticket Status</a>
+            </li>
 
-        <form>
+            <li>
+                <a href="#cancel">Cancel Your Ticket</a>
+            </li>
+        </ul>
 
-            <label for="username">
-                Username
-            </label>
+    </nav>
 
-            <input
-                type="text"
-                id="username"
-                name="username"
-                required
-            >
+    <table class="table">
 
+        <tr>
+            <th>S.No</th>
+            <th>Team</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Venue</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
 
-            <label for="name">
-                Name
-            </label>
+        <tr>
+            <td>1</td>
+            <td>RCB vs CSK</td>
+            <td>27-8-2026</td>
+            <td>19:30</td>
+            <td>Bengaluru</td>
+            <td>$200</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
 
+        <tr>
+            <td>2</td>
+            <td>MI vs RR</td>
+            <td>28-8-2026</td>
+            <td>19:30</td>
+            <td>Mumbai</td>
+            <td>$150</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>DC vs LSG</td>
+            <td>29-8-2026</td>
+            <td>15:30</td>
+            <td>Delhi</td>
+            <td>$200</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>PBKS vs GT</td>
+            <td>29-8-2026</td>
+            <td>19:30</td>
+            <td>Gujarat</td>
+            <td>$180</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>DC vs CSK</td>
+            <td>30-8-2026</td>
+            <td>19:00</td>
+            <td>Chennai</td>
+            <td>$200</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td>RCB vs MI</td>
+            <td>30-6-2026</td>
+            <td>19:30</td>
+            <td>Bengaluru</td>
+            <td>$250</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>PBKS vs RR</td>
+            <td>01-9-2026</td>
+            <td>19:30</td>
+            <td>Punjab</td>
+            <td>$150</td>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+
+    </table>
+
+    <hr class="separator">
+
+    <h3 class="section-title">Login Here</h3>
+
+    <div id="sep">
+
+        <label>User Name:</label>
+        <input type="text" placeholder="Enter your name">
+
+        <label>Password:</label>
+        <input type="password">
+
+        <button class="but">Submit</button>
+
+    </div>
+
+    <hr class="separator">
+
+    <h3 class="section-title">Signup Here</h3>
+
+    <div id="box">
+
+        <label>User Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>DOB:</label>
+        <input type="date">
+
+        <label>Mobile No:</label>
+        <input
+            type="number"
+            placeholder="Enter your mobile number"
+            oninput="this.value = this.value.slice(0,10)"
+            required
+        >
+
+        <label>Email:</label>
+        <input
+            class="email"
+            type="email"
+            placeholder="Enter your email id"
+            required
+        >
+
+        <label>Create Password:</label>
+        <input type="password" required>
+
+        <label>Re-enter your password:</label>
+        <input type="password" required>
+
+        <button class="button">Submit</button>
+
+    </div>
+
+    <hr class="separator">
+
+    <h3 class="section-title">Fill the Below Details to Book Your Ticket</h3>
+
+    <div class="col">
+
+        <form id="book">
+
+            <label for="name">Name:</label>
             <input
                 type="text"
                 id="name"
-                name="name"
-                required
+                placeholder="Enter your name"
+                class="name"
             >
 
-
-            <label for="mobile">
-                Mobile
-            </label>
-
+            <label for="number_of_tickets">No. of Tickets:</label>
             <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                required
+                type="number"
+                id="number_of_tickets"
+                placeholder="Enter the number of tickets"
+                class="number_of_tickets"
             >
 
+            <label for="ticket_type">Ticket Type:</label>
+            <select id="ticket_type">
+                <option>Balcony</option>
+                <option>Box Balcony</option>
+                <option>Luxury Balcony</option>
+                <option>Ground</option>
+                <option>Top Tier</option>
+            </select>
 
-            <label for="email">
-                Email
-            </label>
-
+            <label for="booking_email">Email:</label>
             <input
                 type="email"
-                id="email"
-                name="email"
-                required
+                id="booking_email"
+                placeholder="Enter your email"
+                class="email"
             >
 
-
-            <label for="password">
-                Password
-            </label>
-
+            <label for="booking_mobile">Mobile:</label>
             <input
-                type="password"
-                id="password"
-                name="password"
-                required
+                type="number"
+                id="booking_mobile"
+                placeholder="Enter your mobile number"
+                class="mobile"
             >
 
-
-            <button type="submit">
-                Submit
-            </button>
+            <button id="submit">Submit</button>
 
         </form>
 
+    </div>
 
-        <div class="back">
+    <hr class="separator">
 
-            <a href="index.html">
-                Back to Home
-            </a>
+    <h3 class="section-title">Fill the Below Details to Check the Status of the Ticket</h3>
 
-        </div>
+    <div class="col">
+
+        <form id="status">
+
+            <label for="ticket_number">Ticket Number:</label>
+            <input
+                type="number"
+                id="ticket_number"
+                class="number"
+                placeholder="Enter your ticket number"
+            >
+
+            <button id="submit">Submit</button>
+
+        </form>
 
     </div>
+
+    <hr class="separator">
+
+    <h3 class="section-title">Enter the Below Details to Cancel Your Ticket</h3>
+
+    <div class="col">
+
+        <form id="cancel">
+
+            <label for="cancel_ticket_number">Ticket Number:</label>
+            <input
+                type="number"
+                id="cancel_ticket_number"
+                class="number"
+                placeholder="Enter your ticket number"
+            >
+
+            <label for="cancel_mobile">Mobile:</label>
+            <input
+                type="number"
+                id="cancel_mobile"
+                placeholder="Enter your mobile number"
+                class="mobile"
+            >
+
+            <button id="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <hr class="separator">
+
+    <footer class="foot">
+
+        <p>All Rights Reserved</p>
+        <p>Company Name: IPL Ticket Booking</p>
+        <p>Address: Bengaluru, Karnataka, India</p>
+        <p>Contact Us: 91 9876543210</p>
+
+    </footer>
 
 </body>
 
 </html>
-```
